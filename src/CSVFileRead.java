@@ -40,23 +40,20 @@ public class CSVFileRead {
 			is = new InputStreamReader(fi);
 			br = new BufferedReader(is);
 
-			//読み込み行
+			//行の読み込み
 			String line;
-
-			//読み込み行数
 			int i = 0;
 
 			//列名の配列
-			String[] arr = null;
+			String[] rec = null;
 
 			//1行ずつ読み込みを行う
 			while ((line = br.readLine()) != null) {
 
 				//列名の読み込み
 				if (i == 0) {
-
 					//カンマで分割した内容を配列に格納する
-					arr = line.split(",");
+					rec = line.split(",");
 
 				} else {
 					System.out.println("-------------------------------");
@@ -69,7 +66,7 @@ public class CSVFileRead {
 
 					//配列の中身を上から表示する。配列の要素数分繰り返す
 					int j = 0;
-					for (String column : arr) {
+					for (String column : rec) {
 						System.out.println(column + ":" + data[j]);
 						j++;
 					}
